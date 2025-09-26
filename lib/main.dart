@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ],
     ),
-    // Halaman 2
+    // Halaman 2 layout->column
     Column(
       children: [
         Container(
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ],
     ),
-    // Halaman 3
+    // Halaman 3 layout->row
     Column(
       children: [
         Container(
@@ -74,9 +74,10 @@ class _HomePageState extends State<HomePage> {
         ),
       ],
     ),
-    // Halaman 4 (Form)
+    // Halaman 4 (Form dengan TextField + Button)
     const FormPage(),
   ];
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -99,13 +100,13 @@ class _HomePageState extends State<HomePage> {
       ),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
+        type: BottomNavigationBarType.fixed, // biar bisa lebih dari 3 item
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.timer), label: 'T'),
           BottomNavigationBarItem(icon: Icon(Icons.alarm), label: 'Alarm'),
           BottomNavigationBarItem(icon: Icon(Icons.text_fields), label: 'Text'),
+          BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Profile'),
           BottomNavigationBarItem(icon: Icon(Icons.send), label: 'Form'),
         ],
       ),
